@@ -1,19 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int counter;
-
-void set_counter()
-{
-     counter = 20;     
-}
+int i;
+void f(void);
 
 int main(void)
 {         
-  printf("counter = %d\n", counter); //counter = 0
-  set_counter();// 함수 실행 
-  printf("counter = %d\n", counter); //counter = 20 
-  
+  for (i=0; i<5; i++)
+  {
+      f();    
+  }
   getchar();
   return 0;
 }
+
+void f(void)
+{
+  for (i=0; i<10; i++)
+      printf("#");    
+}
+//i를 지역변수로 변환
+ 
