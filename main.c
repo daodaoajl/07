@@ -1,26 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int inc(int counter);
+
 int main(void)
 {
-  int i;           
-  //int temp; - 생존기간  for 문 int temp를 지운다 
+  int i = 10;           
+  printf("함수 호출 전 i=%d\n", i);
+  inc(i); //i의 복사본이 inc함수에 들어온다. call by value 
+  // i = inc(i); //함수 결과를 i에 넣음 
+  printf("함수 호출 후 i=%d\n", i);
   
-  for(i=0;i<5;i++)
-  {
-   int temp = 1;  
-   //static int temp = 1;      
-   printf("temp = %d\n", temp);
-   temp++;
-  }
-  
-  system("PAUSE");	
+  getchar();
   return 0;
 }
-/* result
-temp=1
-temp=1
-temp=1
-temp=1
-temp=1
-*/
+
+int inc(int counter)//int counter : 지역변수 
+{ 
+ counter++;
+ return counter; 
+}
+ 
