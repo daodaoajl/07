@@ -3,15 +3,24 @@
 
 int main(void)
 {
-  int flag = 1;
-  int y;           //add
-  while(flag != 0)
+  int i;           
+  //int temp; - 생존기간  for 문 int temp를 지운다 
+  
+  for(i=0;i<5;i++)
   {
-   int y;         //y scope
-   y = 3;         
-   flag = 0;      //y scope
+   int temp = 1;  
+   //static int temp = 1;      
+   printf("temp = %d\n", temp);
+   temp++;
   }
-  y = 4;  // compile error
+  
   system("PAUSE");	
   return 0;
 }
+/* result
+temp=1
+temp=1
+temp=1
+temp=1
+temp=1
+*/
